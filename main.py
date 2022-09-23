@@ -4,9 +4,9 @@ import re
 
 def pdftotext(filename):
     """
-    Функция принимает pdf и возвращает построчный список
-    :param filename: Файл pdf
-    :return: Построчный список
+    Функция принимает pdf и возвращает построчный список.
+    :param filename: Файл pdf.
+    :return: Построчный список.
     """
     raw = parser.from_file(filename)
     text_pdf = raw['content']
@@ -15,9 +15,9 @@ def pdftotext(filename):
 
 def razborka(list_text, dict_text):
     """
-    Функция разбирает построчный список по шаблону с помощью регулярных выраженийю
-    :param list_text: Построчный список
-    :param dict_text: Словарь с разобранными значениями
+    Функция разбирает построчный список по шаблону с помощью регулярных выражению.
+    :param list_text: Построчный список.
+    :param dict_text: Словарь с разобранными значениями.
     :return: Возвращает словарь значений.
     """
     for count_str in range(len(list_text)):
@@ -47,9 +47,9 @@ def razborka(list_text, dict_text):
 
 def sort_dict(dict_trat, dict_val):
     """
-    Функция сортирует словарь объединяя согласно шаблона в регулярном выражении
-    :param dict_trat: Словарь готовых данных
-    :param dict_val: Словарь шаблонов
+    Функция сортирует словарь объединяя согласно шаблону в регулярном выражении.
+    :param dict_trat: Словарь готовых данных.
+    :param dict_val: Словарь шаблонов.
     :return: Сгруппированный словарь
     """
     dict_sort = {}
@@ -61,11 +61,11 @@ def sort_dict(dict_trat, dict_val):
     return dict_sort
 
 
-def sort_dict2(dict_trat,dict_val):
+def sort_dict2(dict_trat, dict_val):
     """
-    Функция сортирует словарь объединяя согласно шаблона в регулярном выражении
-    :param dict_trat: Словарь готовых данных
-    :param dict_val: Словарь шаблонов
+    Функция сортирует словарь объединяя согласно шаблона в регулярном выражении.
+    :param dict_trat: Словарь готовых данных.
+    :param dict_val: Словарь шаблонов.
     :return: Сгруппированный словарь
     """
     dict_sort = {}
@@ -106,23 +106,23 @@ text = pdftotext('2.pdf')
 dict_trat = razborka(text, dict_trat)
 # Создаем словарь шаблонов
 dict_val={
-    'OZON':'OZON',
-    'Продукты':'MAGNIT|SHARIFOV|BISKVI|OPTOVICHOK|SVETOFOR|GORKI|NOE BEL|MAKSTER|LENTA|MAKSTER|PEREKRESTOK|SVSH|EVROPA|PYATEROCHKA|Pivtor|AZBUKA VKUSA',
-    'Одежда':'ODEZHD|ZOLLA|GORKI|GRIN|OSTIN',
-    'Аптека':'APTEK|MAKSAVI|OOO VEGA|APTECHNY',
-    'Машина':'AZS|AZK|PARKOMAT|NTER FOR WI|AUTOCLUC|AVTOPASKER|STRELA-AV|VSK|AUTOROOM|AvtoGID|EXIST|PROTEKTOR|AVTOKLYUCH|KAZAKI',
-    'ОФИС':'OFFICE|LEONARD',
-    'ФастФуд':'BURGER|QSR|VINNOE PODV|KAFE|ZAXARENKO|PAW*AVSU|KINOHOD|AVTOSUSHI|PITNICA|BAR|GREEN HAT|PAW*AVSU',
-    'РЕМОНТ':'TORGOVYJ ZAL|SANTEKHNIKA|PRUSAKOV|KHOZTOVAR|BODROVA|KRASKI|OBOI|NAPOLNYEPOKRYTIY|ALLSOFT|PANUKHNIK|STROJTOVAR|RYBAKOVA|PORYADOK|VETTORG',
-    'Комуналка':'SBERBANK ONL@IN PLATEZH',
-    'Техника':'ULTRA|DNS|ALTER|KVANT|BAGIRA',
-    'Страховка':'ALFA',
-    'Варя':'METALLURG',
-    'ALIEXPRESS':'ALIEXPRESS|Aliexpress',
-    'Спортмастер':'SPORTMASTER',
-    'Развлечения':'AKVAPARK|STARYY PARK|ORELKONCERT|LYUBIMOV',
-    'Ипотека':'Agricultural',
-    'Корзина':'MOBILE BANK|ONL@IN KARTA-VKLAD|Tinkoff'
+    'OZON': 'OZON',
+    'Продукты': 'MAGNIT|SHARIFOV|BISKVI|OPTOVICHOK|SVETOFOR|GORKI|NOE BEL|MAKSTER|LENTA|MAKSTER|PEREKRESTOK|SVSH|EVROPA|PYATEROCHKA|Pivtor|AZBUKA VKUSA',
+    'Одежда': 'ODEZHD|ZOLLA|GORKI|GRIN|OSTIN',
+    'Аптека': 'APTEK|MAKSAVI|OOO VEGA|APTECHNY',
+    'Машина': 'AZS|AZK|PARKOMAT|NTER FOR WI|AUTOCLUC|AVTOPASKER|STRELA-AV|VSK|AUTOROOM|AvtoGID|EXIST|PROTEKTOR|AVTOKLYUCH|KAZAKI',
+    'ОФИС': 'OFFICE|LEONARD',
+    'ФастФуд': 'BURGER|QSR|VINNOE PODV|KAFE|ZAXARENKO|PAW*AVSU|KINOHOD|AVTOSUSHI|PITNICA|BAR|GREEN HAT|PAW*AVSU',
+    'РЕМОНТ': 'TORGOVYJ ZAL|SANTEKHNIKA|PRUSAKOV|KHOZTOVAR|BODROVA|KRASKI|OBOI|NAPOLNYEPOKRYTIY|ALLSOFT|PANUKHNIK|STROJTOVAR|RYBAKOVA|PORYADOK|VETTORG',
+    'Комуналка': 'SBERBANK ONL@IN PLATEZH',
+    'Техника': 'ULTRA|DNS|ALTER|KVANT|BAGIRA',
+    'Страховка': 'ALFA',
+    'Варя': 'METALLURG',
+    'ALIEXPRESS': 'ALIEXPRESS|Aliexpress',
+    'Спортмастер': 'SPORTMASTER',
+    'Развлечения': 'AKVAPARK|STARYY PARK|ORELKONCERT|LYUBIMOV',
+    'Ипотека': 'Agricultural',
+    'Корзина': 'MOBILE BANK|ONL@IN KARTA-VKLAD|Tinkoff'
 }
 # Получаем сгруппированный словарь согласно шаблону
 dict_sort = sort_dict2(dict_trat,dict_val)
